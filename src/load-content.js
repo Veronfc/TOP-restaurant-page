@@ -13,6 +13,7 @@ header.appendChild(headImg)
 
 const main = document.createElement('div')
 main.className = 'main'
+main.innerHTML = '<div class="description"><strong>That Food Place</strong> is an upscale and sophisticated dining establishment that sets the standard for exquisite culinary experiences. Nestled in the heart of a bustling city, this restaurant is a haven for food enthusiasts seeking a memorable gastronomic adventure</div>'
 
 const side = document.createElement('div')
 side.className = 'side'
