@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'That Food Place',
     })
   ],
   module: {
@@ -22,6 +22,10 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.xml$/i,
+        use: ['xml-loader'],
       },
     ],
   },

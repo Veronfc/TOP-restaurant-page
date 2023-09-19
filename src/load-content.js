@@ -1,15 +1,21 @@
 import './style.css'
-import si from './img/pexels-lumn-604969.jpg'
+import si from './img/pexels-guilherme-rossi-1819669.jpg'
+import hi from './img/absurd.design-chapter1-31.png'
+import content from './content.xml'
 
 const header = document.createElement('div')
 header.classList.add('header')
-header.innerHTML = '<em>restaurant name</em>'
+header.innerHTML = '<em>That Food Place</em>'
+const headImg = new Image()
+headImg.src = hi
+headImg.className = 'head'
+header.appendChild(headImg)
 
 const main = document.createElement('div')
-main.classList.add('main')
+main.className = 'main'
 
 const side = document.createElement('div')
-side.classList.add('side')
+side.className = 'side'
 
 const sideImg = new Image()
 sideImg.src = si
