@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-template-columns: 5fr 2fr;
   grid-template-rows: 150px 1fr;
-  gap: 15px;
+  gap: 7.5px;
   align-items: stretch;
   justify-items: stretch;
 }
@@ -43,6 +43,10 @@ body {
 @media screen and (max-width: 700px) {
   .header {
     font-size: 6rem;
+  }
+
+  body {
+    grid-template-columns: 8fr 1fr;
   }
 }
 
@@ -85,16 +89,48 @@ body {
 
 .main {
   grid-area: 2/1/3/2;
-  padding: 35px;
-  margin: 0 0 15px 15px;
-  border-radius: 30px 0 0 30px;
+  margin: 0 0 7.5px 7.5px;
+  border-radius: 30px 0 0 0;
   background-color: rgba(0, 0, 0, 0.25);
   color: white;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  gap: 2px;
+}
+
+.tabs {
+  grid-area: 1/1/2/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  border-radius: 30px 0 0 0;
+  overflow: hidden;
+}
+
+.tab {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: grid;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  transition: 0.75s;
+}
+
+.tab:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  grid-area: 2/1/3/2;
+  padding: 25px;
 }
 
 hr {
@@ -116,6 +152,23 @@ hr {
   letter-spacing: 0.75rem;
 }
 
+.sub {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+}
+
+.home-img {
+  align-self: stretch;
+  justify-self: end;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 0 30px 30px 0;
+  -webkit-mask-image:-webkit-gradient(linear, right top, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+/*
 .signature {
   width: 100%;
   display: flex;
@@ -146,16 +199,17 @@ hr {
   cursor: pointer;
   padding: 0 0 5px 0;
 }
+*/
 
 .side {
   grid-area: 2/2/3/3;
-  padding: 0 15px 15px 0;
+  padding: 0 7.5px 7.5px 0;
 }
 
 .side-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 30px 0 0;
   border: 0;
 }
