@@ -13,16 +13,19 @@ headImg.src = hi
 headImg.className = 'head'
 header.appendChild(headImg)
 
-const main = document.createElement('div')
-main.className = 'main'
-main.innerHTML = '<div class="tabs"><div id="home" class="tab">HOME</div><div id="manu" class="tab">MENU</div><div id="contact" class="tab">CONTACT</div></div>'
-
 const container = document.createElement('div')
 container.className = 'container'
-container.appendChild(homeContent())
-container.appendChild(menuContent())
-container.appendChild(contactContent())
-main.appendChild(container)
+container.innerHTML = '<div class="tabs"><div id="home" class="tab">HOME</div><div id="manu" class="tab">MENU</div><div id="info" class="tab">INFO</div></div>'
+
+const main = document.createElement('div')
+main.className = 'main'
+
+const mainContainer = document.createElement('div')
+mainContainer.className = 'main-container'
+mainContainer.appendChild(homeContent())
+mainContainer.appendChild(menuContent())
+mainContainer.appendChild(contactContent())
+main.appendChild(mainContainer)
 
 const side = document.createElement('div')
 side.className = 'side'
@@ -32,14 +35,16 @@ sideImg.src = si
 sideImg.classList.add('side-image')
 side.appendChild(sideImg)
 
+container.appendChild(main)
+container.appendChild(side)
+
 const curveLeft = document.createElement('div')
 curveLeft.className = 'curve-left'
 const curveRight = document.createElement('div')
 curveRight.className = 'curve-right'
 
 document.body.appendChild(header)
-document.body.appendChild(main)
-document.body.appendChild(side)
+document.body.appendChild(container)
 document.body.appendChild(curveLeft)
 document.body.appendChild(curveRight)
 
