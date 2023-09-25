@@ -1,7 +1,3 @@
-import ai from './img/pexels-alteredsnaps-16968768.jpg'
-import ci from './img/pexels-valeria-boltneva-1833349.jpg'
-import si from './img/pexels-bruno-cantuária-774455.jpg'
-
 function homeContent() {
   const home = document.createElement('div')
   home.className = 'home selected'

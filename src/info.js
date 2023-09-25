@@ -22,6 +22,10 @@ function infoContent() {
   address.className = 'signature'
   address.innerHTML = '<strong>ADDRESS</strong><div class="dish">That Food Place,<br>123 Gourmet Avenue,<br>Savoryville, Culinary County,<br>Delightfulville 56789</div>'
 
+  const contact = document.createElement('div')
+  contact.className = 'signature'
+  contact.innerHTML = '<strong>CONTACT</strong><div class="dish"><strong>Phone:</strong> (555) 123-4567<br><strong>Email:</strong> info@thatfoodplace.com</div>'
+
   info.appendChild(location)
   info.appendChild(document.createElement('hr'))
   info.appendChild(nightlife)
@@ -31,6 +35,8 @@ function infoContent() {
   info.appendChild(architecture)
   info.appendChild(document.createElement('hr'))
   info.appendChild(address)
+  info.appendChild(document.createElement('hr'))
+  info.appendChild(contact)
   
   return info
 }
