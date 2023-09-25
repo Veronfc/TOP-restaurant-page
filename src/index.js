@@ -87,7 +87,7 @@ infoTab.addEventListener('click', () => {
 
 const banana = document.createElement('div')
 banana.className = 'banana'
-banana.innerHTML = '<strong>CALORY FINDER</strong>'
+banana.innerHTML = '<strong>CALORIE FINDER</strong>'
 const bananaImg = new Image()
 bananaImg.src = bi
 bananaImg.className = 'banana-img'
