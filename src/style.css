@@ -61,6 +61,7 @@ body {
   width: 120px;
   filter: invert(1);
   padding: 0 0 0 20px;
+  cursor: pointer;
 }
 
 .curve-left, .curve-right {
@@ -141,22 +142,66 @@ hr {
 }
 
 .desc > strong {
+  font-style: normal;
   display: block;
   padding: 0 0 10px 0;
   letter-spacing: 0.75rem;
 }
 
-.sub {
-  display: flex;
-  flex-direction: column;
-  background-size: cover;
+.menu .desc > strong {
+  font-style: normal;
+  display: block;
+  padding: 0 0 15px 0;
+  letter-spacing: 0.75rem;
+}
+
+.desc li {
+  font-style: normal;
+  text-align: left;
+  font-size: 1.1rem;
+  padding: 0 0 20px 0;
+  font-style: italic;
+}
+
+.desc li:last-child {
+  font-style: normal;
+  text-align: left;
+  font-size: 1.1rem;
+  padding: 0;
+  font-style: italic;
+}
+
+.desc li strong {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
 }
 
 .home {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   overflow: auto;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.info {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.selected {
+  display: flex;
 }
 
 .signature {
@@ -172,11 +217,19 @@ hr {
   display: block;
   letter-spacing: 0.75rem;
   font-size: 1.2rem;
-  font-style: italic;
 }
 
 .dish {
-  list-style: none;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  margin: 20px 0 0 0;
+  width: calc(100% - 40px);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.dish:last-child {
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.25);
   padding: 20px;
@@ -184,10 +237,20 @@ hr {
   font-size: 1.1rem;
 }
 
+.home .dish, .info .dish {
+  margin: 0;
+}
+
 .dish strong {
   display: block;
   cursor: pointer;
-  padding: 0 0 5px 0;
+  padding: 0 0 2.5px 0;
+  font-style: normal;
+}
+
+.info .dish:last-child {
+  margin: 20px 0 0 0;
+  text-align: start;
 }
 
 .side {

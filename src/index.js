@@ -1,6 +1,6 @@
 import { homeContent } from './home.js'
 import { menuContent } from './menu.js'
-import { contactContent } from './contact.js'
+import { infoContent } from './info.js'
 import './style.css'
 import si from './img/pexels-volkan-vardar-3887985.jpg'
 import hi from './img/absurd.design-chapter1-31.png'
@@ -11,20 +11,24 @@ header.innerHTML = '<em>That Food Place</em>'
 const headImg = new Image()
 headImg.src = hi
 headImg.className = 'head'
+headImg.title = 'Roy\'s Banana'
 header.appendChild(headImg)
 
 const container = document.createElement('div')
 container.className = 'container'
-container.innerHTML = '<div class="tabs"><div id="home" class="tab">HOME</div><div id="manu" class="tab">MENU</div><div id="info" class="tab">INFO</div></div>'
+container.innerHTML = '<div class="tabs"><div id="home" class="tab active">HOME</div><div id="menu" class="tab">MENU</div><div id="info" class="tab">INFO</div></div>'
 
 const main = document.createElement('div')
 main.className = 'main'
 
 const mainContainer = document.createElement('div')
 mainContainer.className = 'main-container'
-mainContainer.appendChild(homeContent())
-mainContainer.appendChild(menuContent())
-mainContainer.appendChild(contactContent())
+const home = homeContent()
+mainContainer.appendChild(home)
+const menu = menuContent()
+mainContainer.appendChild(menu)
+const info = infoContent()
+mainContainer.appendChild(info)
 main.appendChild(mainContainer)
 
 const side = document.createElement('div')
@@ -48,9 +52,37 @@ document.body.appendChild(container)
 document.body.appendChild(curveLeft)
 document.body.appendChild(curveRight)
 
-const tabs = document.querySelectorAll('.tab')
-tabs.forEach((tab) => {
-  tab.addEventListener('click', () => {
-    tab.classList.contains('active') ? tab.classList.remove('active') : tab.classList.add('active')
-  })
+const homeTab = document.getElementById('home')
+const menuTab = document.getElementById('menu')
+const infoTab = document.getElementById('info')
+
+homeTab.addEventListener('click', () => {
+  home.classList.add('selected')
+  menu.classList.remove('selected')
+  info.classList.remove('selected')
+  homeTab.classList.add('active')
+  menuTab.classList.remove('active')
+  infoTab.classList.remove('active')
 })
+
+menuTab.addEventListener('click', () => {
+  home.classList.remove('selected')
+  menu.classList.add('selected')
+  info.classList.remove('selected')
+  homeTab.classList.remove('active')
+  menuTab.classList.add('active')
+  infoTab.classList.remove('active')
+})
+
+infoTab.addEventListener('click', () => {
+  home.classList.remove('selected')
+  menu.classList.remove('selected')
+  info.classList.add('selected')
+  homeTab.classList.remove('active')
+  menuTab.classList.remove('active')
+  infoTab.classList.add('active')
+})
+
+headImg.onclick = () => {
+  
+}

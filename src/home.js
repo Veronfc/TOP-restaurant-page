@@ -4,14 +4,14 @@ import si from './img/pexels-bruno-cantuária-774455.jpg'
 
 function homeContent() {
   const home = document.createElement('div')
-  home.className = 'home'
+  home.className = 'home selected'
 
   const desc = document.createElement('div')
-  desc.className = 'desc'
+  desc.className = 'desc dish'
   desc.innerHTML = 'That Food Place is an upscale and sophisticated dining establishment that sets the standard for exquisite culinary experiences. Nestled in the heart of a bustling city, this restaurant is a haven for food enthusiasts seeking a memorable gastronomic adventure.'
 
   const ambiance = document.createElement('div')
-  ambiance.className = 'desc sub'
+  ambiance.className = 'desc'
   ambiance.innerHTML = '<strong>AMBIANCE</strong>As you step through the elegant doors of That Food Place, you are transported into a world of opulence and refinement. The interior decor is a harmonious blend of contemporary design and classic charm. Rich mahogany wood accents and soft, warm lighting create an inviting and intimate atmosphere.The restaurant also boasts a spacious outdoor terrace, complete with lush greenery, perfect for al fresco dining on pleasant evenings.'
 
   const cuisine = document.createElement('div')
